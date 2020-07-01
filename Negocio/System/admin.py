@@ -1,6 +1,11 @@
 from django.contrib import admin
 from System.models import *
 
+#class EntryInLines(admin.TabularInLine):
+#   model
+
+
+
 # Register your models here.
 
 admin.site.register(Direccion)
