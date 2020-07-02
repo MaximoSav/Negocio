@@ -24,8 +24,13 @@ class Venta(models.Model):
     RUT = models.PositiveIntegerField(primary_key=True)
     fecha = models.DateField() 
     monto_final = models.IntegerField()
-    descuento = models.BooleanField()
+    descuento = models.BooleanField(default = True)
     cliente = models.ForeignKey('Cliente', on_delete = models.CASCADE, null = True)
+
+    def Descuento_Venta(self):
+        return (self.descuento,)
+    #Descuento_Venta.boolean = False
+    Descuento_Venta.short_description = 'Descuento de Venta'
 
     def __str__(self):
         return ("{}:{}".format(self.RUT, self.fecha, self.monto_final, self.descuento, self.cliente))
